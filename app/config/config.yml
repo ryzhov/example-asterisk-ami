@@ -1,0 +1,6 @@
+imports:
+    - { resource: parameters.yml }
+    - { resource: asterisk.yml }
+
+framework:
+    secret:          "%secret%"

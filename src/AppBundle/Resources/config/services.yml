@@ -1,0 +1,11 @@
+parameters:
+
+services:
+    service.event_handler:
+        class: AppBundle\Service\EventHandler
+        public: false
+        calls:
+            - [setLogger, ["@logger"]]
+        tags:
+            - { name: monolog.logger, channel: event_handler }
+            - { name: asterisk.ami_event_handler, client: asterisk.main_client }

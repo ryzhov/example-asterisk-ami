@@ -1,0 +1,14 @@
+asterisk:
+    connections:
+        default:
+            host: "%asterisk_host%"
+            port: "%asterisk_ami_port%"
+            username: "%asterisk_ami_username%"
+            secret: "%asterisk_ami_secret%"
+            connect_timeout: 5
+            read_timeout: 5
+
+    clients:
+        main:
+            connection: default
+            logger_channel: ami

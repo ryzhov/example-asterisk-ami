@@ -1,0 +1,22 @@
+imports:
+    - { resource: config.yml }
+
+monolog:
+    handlers:
+        main:
+            type: stream
+            path: "%kernel.logs_dir%/%kernel.environment%.log"
+            level: debug
+            channels: [!event]
+
+        console:
+            type: console
+            verbosity_levels:
+                VERBOSITY_NORMAL: INFO
+            channels: [!event, !doctrine]
+
+        ami:
+            type: stream
+            path: "%kernel.logs_dir%/ami.%kernel.environment%.log"
+            level: info
+            channels: [event_handler]

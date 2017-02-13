@@ -1,0 +1,9 @@
+parameters:
+
+services:
+    command.event_handler:
+        class: AppBundle\Command\EventHandlerCommand
+        calls:
+            - [setClient, ["@asterisk.main_client"]]
+        tags:
+            - { name: console.command }
