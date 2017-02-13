@@ -1,4 +1,5 @@
 parameters:
+    secret: 123132424355465
     asterisk_host: ast2.lo
     asterisk_ami_port: 5038
     asterisk_ami_username: ws_handler
